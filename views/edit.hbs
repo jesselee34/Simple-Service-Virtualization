@@ -1,13 +1,17 @@
+{{#if added}}
+	<div class="alert-success">Your virtualized service was just added.</div>
+{{/if}}
+
 <h1>Edit a request/response</h1>
 
-<form action="/Illustrations-Core/edit/" method="POST">
+<form method="POST">
 	<div>
 		<label>Name: </label>
-		<input type="text" name="name" value="{{name}}">
+		<input type="text" name="name" value="{{vs.name}}">
 	</div>
 	<div>
 		<label>Method: </label>
-		<select name="method" value="{{method}}">
+		<select name="method" value="{{vs.method}}">
 			<option value="GET">GET</option>
 			<option value="POST">POST</option>
 			<option value="PUT">PUT</option>
@@ -16,15 +20,15 @@
 	</div>
 	<div>
 		<label>Endpoint: </label>
-		<input type="text" name="enpoint" value="{{endpoint}}" >
+		<input type="text" name="enpoint" value="{{vs.endpoint}}" >
 	</div>
 	<div>
 		<label>Request: </label>
-		<textarea name="reqestBody" >{{requestBody}}</textarea>
+		<textarea name="reqestBody" >{{vs.requestBody}}</textarea>
 	</div>
 	<div>
 		<label>Response: </label>
-		<textarea name="responseBody">{{responseBody}}</textarea>
+		<textarea name="responseBody">{{vs.responseBody}}</textarea>
 	</div>
 	<div>
 		<button type="submit">Save</button>

@@ -2,9 +2,9 @@ var Storage = require('node-persist');
 
 Storage.initSync();
 
-var DataModel = function(requestBody, responseBody, endpoint, id){
+var DataModel = function(name, method, endpoint, requestBody, responseBody, id){
 	if( !(this instanceof DataModel) ){
-		return new DataModel(data);
+		return new DataModel(name, method, endpoint, requestBody, responseBody, id);
 	}
 
 	if(id){
@@ -23,16 +23,18 @@ var DataModel = function(requestBody, responseBody, endpoint, id){
 
 	} else if (!requestBody || !responseBody || !endpoint ) {
 		throw new Error('requestBody, responseBody or endpoint was undefined.');
+	} else {
+		this.id = (Storage.length() + 1).toString();
+		this.name = name || 'Untitled' + this.id;
+		this.method = method || 'POST';
+		this.requestBody = requestBody;
+		this.responseBody = responseBody;
+		this.endpoint = endpoint;
 	}
-
-	this.id = Storage.length() + 1;
-	this.name = name || 'Untitled' + this.id;
-	this.method = method || 'POST';
-	this.requestBody = requestBody;
-	this.responseBody = responseBody;
-	this.endpoint = endpoint;
 };
 
 DataModel.prototype.save = function(callback){
 	Storage.setItem(this.id, this, callback);
 };
+
+module.exports = DataModel;

@@ -1,15 +1,31 @@
 <div>
-	<h1>Service Virtualization</h1>
-	<p>Choose 'Add' to add a new virtualized service or 'Edit' to edit one.</p>
-	
 	<div class="container">
 		<div class="row">
 			<div class="sm-col-6">
-				
+				<h2>Add</h2>
+				<p>Click here to add a new virtualized service</p>
+				<a href="/UI/add" >Add New</a>
 			</div>
 			<div class="sm-col-6">
-				
+				<h2>Edit</h2>
+				<p>Choose from the list below to edit and existing service</p>
+				<div>
+					<select id="edit">
+						<option>-- Select --</option>
+						{{#each vs}}
+						<option value={{id}}>{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script src="/javascripts/jquery.min.js" ></script>
+<script>
+	$(function(){
+		$('#edit').change(function(){
+			window.location = '/UI/edit/' + $(this).val();
+		});
+	});
+</script>
