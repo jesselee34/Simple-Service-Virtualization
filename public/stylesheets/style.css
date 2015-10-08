@@ -1,0 +1,97 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(#E8E8E8,#FFF) no-repeat;
+  background-size: 100% 200px;
+}
+
+.pure-button-primary,
+a.pure-button-primary { background-color: #00B7FF; }
+
+h1 a {
+  color: #000;
+  text-decoration: none;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #EEE;
+}
+
+nav a {
+  color: #00B7FF;
+  text-decoration: none;
+  padding: 5px 15px;
+  padding-left: 0;
+  display: inline;
+  transition: color linear .2s;
+}
+
+nav a:hover {
+  color: #333;
+}
+
+nav a:last-child { padding-right: 0; }
+
+strong.success { color: #44D200; }
+
+ul.errors {
+  color: #FF4B00;
+}
+
+nav {
+  border-bottom: 1px solid #00B7FF;
+  padding-bottom: 5px;
+}
+nav ul {
+  list-style: none;
+  display: inline;
+  padding-left: 0;
+}
+nav ul li {
+  display: inline;
+}
+
+main {
+  color: #616161;
+}
+
+/* Custom page styles */
+main.index a.button-wrapper {
+  display: inline-block;
+}
+
+main.login input[type=text][name=username], 
+main.login input[type=password][name=password] {
+  width: 420px;
+  margin-bottom: 20px;
+}
+
+main.users input[type=text][name=username], 
+main.users input[type=password][name=password] {
+  width: 210px;
+}
+
+main.questions input[name=questionText] {
+  width: 420px;
+}
+
+textarea {
+  display: block;
+  width: 500px;
+  height: 300px;
+}
+
+div {
+  margin: 20px 0;
+}
+
+input, select {
+    background: none;
+    padding: 10px 20px;
+    display: block;
+    border: 1px solid #666;
+    margin: 10px 0;
+}

@@ -1,0 +1,32 @@
+<h1>Edit a request/response</h1>
+
+<form action="/Illustrations-Core/edit/" method="POST">
+	<div>
+		<label>Name: </label>
+		<input type="text" name="name" value="{{name}}">
+	</div>
+	<div>
+		<label>Method: </label>
+		<select name="method" value="{{method}}">
+			<option value="GET">GET</option>
+			<option value="POST">POST</option>
+			<option value="PUT">PUT</option>
+			<option value="DELETE">DELETE</option>
+		</select>
+	</div>
+	<div>
+		<label>Endpoint: </label>
+		<input type="text" name="enpoint" value="{{endpoint}}" >
+	</div>
+	<div>
+		<label>Request: </label>
+		<textarea name="reqestBody" >{{requestBody}}</textarea>
+	</div>
+	<div>
+		<label>Response: </label>
+		<textarea name="responseBody">{{responseBody}}</textarea>
+	</div>
+	<div>
+		<button type="submit">Save</button>
+	</div>
+</form>

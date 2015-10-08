@@ -1,0 +1,32 @@
+<h1>Add a request/response</h1>
+
+<form action="/Illustrations-Core/add/" method="POST">
+	<div>
+		<label>Name: </label>
+		<input type="text" name="name" >
+	</div>
+	<div>
+		<label>Method: </label>
+		<select name="method">
+			<option value="GET">GET</option>
+			<option value="POST">POST</option>
+			<option value="PUT">PUT</option>
+			<option value="DELETE">DELETE</option>
+		</select>
+	</div>
+	<div>
+		<label>Endpoint: </label>
+		<input type="text" name="enpoint" >
+	</div>
+	<div>
+		<label>Request: </label>
+		<textarea name="reqestBody"></textarea>
+	</div>
+	<div>
+		<label>Response: </label>
+		<textarea name="responseBody"></textarea>
+	</div>
+	<div>
+		<button type="submit">Save</button>
+	</div>
+</form>
